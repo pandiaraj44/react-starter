@@ -1,0 +1,3 @@
+welcome = () => {
+  alert('Welcome');
+}
