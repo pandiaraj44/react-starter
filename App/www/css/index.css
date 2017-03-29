@@ -1,3 +1,12 @@
-.demo-app{
+.header{
   background-color: pink
+}
+
+.footer{
+  background-color: grey
+}
+
+.content{
+  background-color: yellow,
+  height: 100%
 }

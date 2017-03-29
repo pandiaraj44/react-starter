@@ -6,7 +6,13 @@ const {width, height, scale} = Dimensions.get("window"),
     vmax = Math.max(vw, vh);
 
 export default StyleSheet.create({
-    "demo-app": {
+    "header": {
         "backgroundColor": "pink"
+    },
+    "footer": {
+        "backgroundColor": "grey"
+    },
+    "content": {
+        "backgroundColor": "yellow,  height: 100%"
     }
 });

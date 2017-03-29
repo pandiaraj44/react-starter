@@ -9,8 +9,8 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <div className={"demo-app"} onClick={this.handleClick}>
-        <h1>Demo App</h1>
+      <div>
+        {this.props.children}
       </div>
     );
   }
