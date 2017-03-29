@@ -13,6 +13,7 @@ export default StyleSheet.create({
         "backgroundColor": "grey"
     },
     "content": {
-        "backgroundColor": "yellow,  height: 100%"
+        "backgroundColor": "white",
+        "height": "100%"
     }
 });

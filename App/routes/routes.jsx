@@ -7,12 +7,13 @@ import {
   About,
   Login,
   NotFound,
-  HomeContent
+  HomeContent,
+  Task
 } from '../containers/index.jsx';
 
-const isLoggedIn = (nextState, replace, cb) => {
+const isLoggedIn = (nextState, replace, cb) => {  
   if(!nextState){
-    replace('/');
+    replace('/login');
     cb();
   }else {
     cb();
@@ -25,6 +26,7 @@ export default (
 
       <Route path="home" component={Home} onEnter={isLoggedIn}>
         <IndexRoute component={HomeContent}/>
+        <Route path="task" component={Task}/>
       </Route>
 
       <Route path="login" component={Login}/>

@@ -1,14 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {getCountryList} from '../../actions/HomeAction.jsx';
+import {getTaskList} from '../../actions/TaskAction.jsx';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
-
-class HomeContent extends React.Component {
+class Task extends React.Component {
 
   componentWillMount(){
-    this.props.getCountryList();
+    this.props.getTaskList();
   }
 
   onListClick = (path) => {
@@ -37,14 +36,14 @@ class HomeContent extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.HomeReducer.list
+    list: state.TaskReducer.list
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getCountryList: () => {
-      dispatch(getCountryList())
+    getTaskList: () => {
+      dispatch(getTaskList())
     }
   }
 }
@@ -52,4 +51,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeContent);
+)(Task);

@@ -4,3 +4,4 @@ export Login from './Login/Login.jsx';
 export About from './About/About.jsx';
 export NotFound from './NotFound/NotFound.jsx';
 export HomeContent from './Home/HomeContent.jsx';
+export Task from './Task/Task.jsx';

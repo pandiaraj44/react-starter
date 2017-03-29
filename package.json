@@ -7,9 +7,16 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.23.0",
+    "concurrently": "^3.4.0",
+    "dev": "^0.1.3",
+    "express": "^4.15.2",
+    "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^2.0.0"
+    "react-redux": "^5.0.3",
+    "react-router": "^2.0.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -22,7 +29,9 @@
     "webpack": "^2.3.1"
   },
   "scripts": {
-    "start": "webpack -d --watch",
+    "start": "concurrent --kill-others \"npm run start-webpack-build\" \"npm run start-server\"",
+    "start-server": "node App/server.js",
+    "start-webpack-build": "webpack -d --watch",
     "build": "webpack -p"
   }
 }
