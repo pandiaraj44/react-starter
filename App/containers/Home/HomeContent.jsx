@@ -1,14 +1,31 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {getCountryList} from '../../actions/HomeAction.jsx';
+import * as HomeAction from '../../actions/HomeAction.jsx';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
+import { asyncConnect } from 'redux-async-connect';
 
+//dispatch => bindActionCreators({getCountryList}, dispatch))
 
-class HomeContent extends React.Component {
+@asyncConnect([{
+  promise: ({store: {dispatch, getState}}) => {
+    const promises = [];
+    let p1 = new Promise((resolve, reject) => {
+      setTimeout(resolve, 1000, 'p1'); //To delay homepage by 1 sec
+    });
+    let p2 = dispatch(HomeAction.getCountryList1()); // To load country list
+    promises.push(p1);
+    promises.push(p2);
+    return Promise.all(promises); //Wait for each promise to complete
+  }
+}])
+@connect(
+    state => ({list: state.HomeReducer.list}),
+    HomeAction)
+export default class HomeContent extends React.Component {
 
   componentWillMount(){
-    this.props.getCountryList();
+    //this.props.getCountryList1();
   }
 
   onListClick = (path) => {
@@ -35,7 +52,7 @@ class HomeContent extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+/*const mapStateToProps = (state, ownProps) => {
   return {
     list: state.HomeReducer.list
   }
@@ -47,9 +64,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(getCountryList())
     }
   }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeContent);
+}*/

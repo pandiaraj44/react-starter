@@ -6,3 +6,10 @@ export const getCountryList = () => {
     list: ['India', 'Australia']
   }
 }
+
+export const getCountryList1 = () => {
+  return {
+    type: LIST_COUNTRY,
+    list: ['India1', 'Australia']
+  }
+}

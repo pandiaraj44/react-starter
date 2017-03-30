@@ -6,14 +6,17 @@ import { createStore } from 'redux';
 import reducers from './reducers/reducers.jsx';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import {ReduxAsyncConnect} from 'redux-async-connect';
 
 
-const store = createStore(reducers);
+const store = createStore(reducers, window.__data);
 
 const history = syncHistoryWithStore(browserHistory, store)
 
 render((
   <Provider store={store}>
-    <Router history={history} routes={routes}/>
+    <Router history={history} routes={routes} render={(props)=>
+      <ReduxAsyncConnect {...props}/>
+    }/>
   </Provider>
 ), document.getElementById('app'));

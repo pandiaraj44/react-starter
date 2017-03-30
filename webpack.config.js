@@ -20,7 +20,12 @@ var config = {
         test: /\.jsx?$/,
         // Options to configure babel with
         query: {
-          plugins: ['transform-runtime'],
+          plugins: [
+            'transform-runtime',
+            'add-module-exports',
+            'transform-decorators-legacy',
+            'transform-react-display-name'
+          ],
           presets: ['es2015', 'stage-0', 'react'],
         }
       },
