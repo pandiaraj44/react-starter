@@ -20,7 +20,9 @@
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
-    "redux-async-connect": "^1.0.0-rc4"
+    "redux-async-connect": "^1.0.0-rc4",
+    "redux-thunk": "^2.2.0",
+    "superagent": "^3.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

@@ -1,9 +1,13 @@
+export const LOAD_COUNTRY = 'LOAD_COUNTRY';
+export const LOAD_COUNTRY_SUCCESS = 'LOAD_COUNTRY_SUCCESS';
+export const LOAD_COUNTRY_FAILURE = 'LOAD_COUNTRY_FAILURE';
+
 export const LIST_COUNTRY = 'LIST_COUNTRY';
 
 export const getCountryList = () => {
   return {
-    type: LIST_COUNTRY,
-    list: ['India', 'Australia']
+    types: [LOAD_COUNTRY, LOAD_COUNTRY_SUCCESS, LOAD_COUNTRY_FAILURE],
+    promise: (client) => client.get('/country')
   }
 }
 

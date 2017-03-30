@@ -10,7 +10,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         loading: true,
-        list: action.list
+        taskList: action.taskList
       };
     default:
       return state;

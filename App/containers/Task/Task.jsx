@@ -17,18 +17,28 @@ class Task extends React.Component {
   render() {
     return(
       <div>
-        <div>
-          <h1 style={{float: 'left', width:'50%'}} onClick={(e)=>{this.onListClick("/home")}}>Home Content</h1>
-          <h1 style={{float: 'right', width:'50%'}} onClick={(e)=>{this.onListClick("/home/task")}}>Task</h1>
+
+        <div style={{float: 'left', width:'50%'}}>
+          <h1 onClick={(e)=>{this.onListClick("/home")}}>Home Content</h1>
+          <ul style={{float: 'left', width:'50%'}}>
+              {this.props.taskList &&
+                this.props.taskList.map((object, index)=>{
+                  return (<li key={index}>{object}</li>);
+                })
+              }
+          </ul>
         </div>
-        <br/>
-        <ul >
-            {this.props.list &&
-              this.props.list.map((object, index)=>{
-                return (<li key={index}>{object}</li>);
-              })
-            }
-        </ul>
+        <div style={{float: 'right', width:'50%'}}>
+          <h1 onClick={(e)=>{this.onListClick("/home/task")}}>Task</h1>
+          <ul style={{float: 'right', width:'50%'}}>
+              {this.props.taskList &&
+                this.props.taskList.map((object, index)=>{
+                  return (<li key={index}>{object}</li>);
+                })
+              }
+          </ul>
+        </div>
+
       </div>
     );
   }
@@ -36,7 +46,7 @@ class Task extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.TaskReducer.list
+    taskList: state.TaskReducer.taskList
   }
 }
 
