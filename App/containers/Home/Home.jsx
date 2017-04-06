@@ -1,20 +1,30 @@
 import React from 'react';
 import {render} from 'react-dom';
+import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
+import LeftNavBar from '../NavBar/LeftNavBar.jsx';
 
 export default class Home extends React.Component {
 
   render() {
     return(
-      <div>
-        <div className={"header"} onClick={this.handleClick}>
-          <h1>Demo App Header</h1>
-        </div>
-        <div className={"content"} onClick={this.handleClick}>
-          {this.props.children}
-        </div>
-        <div className={"footer"} onClick={this.handleClick}>
-          <h1>Demo App Footer</h1>
-        </div>
+      <div className="flexbox-parent">
+        <Header></Header>
+        <main id="main" className="flexbox-item-grow" >
+          <div className="wrapper">
+            <LeftNavBar></LeftNavBar>
+              <section id="content" className="card margin-4">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col s12 m12 l12">
+                        {this.props.children}
+                      </div>
+                    </div>
+                  </div>
+              </section>
+            </div>
+        </main>
+        <Footer></Footer>
       </div>
     );
   }

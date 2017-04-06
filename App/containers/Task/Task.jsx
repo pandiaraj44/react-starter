@@ -19,7 +19,7 @@ class Task extends React.Component {
       <div>
 
         <div style={{float: 'left', width:'50%'}}>
-          <h1 onClick={(e)=>{this.onListClick("/home")}}>Home Content</h1>
+          <h1 onClick={(e)=>{this.onListClick("")}}>Home Content</h1>
           <ul style={{float: 'left', width:'50%'}}>
               {this.props.taskList &&
                 this.props.taskList.map((object, index)=>{
@@ -29,7 +29,7 @@ class Task extends React.Component {
           </ul>
         </div>
         <div style={{float: 'right', width:'50%'}}>
-          <h1 onClick={(e)=>{this.onListClick("/home/task")}}>Task</h1>
+          <h1 onClick={(e)=>{this.onListClick("/task")}}>Task</h1>
           <ul style={{float: 'right', width:'50%'}}>
               {this.props.taskList &&
                 this.props.taskList.map((object, index)=>{

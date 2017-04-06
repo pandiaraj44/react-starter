@@ -9,7 +9,7 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="flexbox-parent">
         {this.props.children}
       </div>
     );

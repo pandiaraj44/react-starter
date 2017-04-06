@@ -17,9 +17,9 @@ import {bindActionCreators} from 'redux';
     let p1 = new Promise((resolve, reject) => {
       setTimeout(resolve, 10, 'p1'); //To delay homepage by 1 sec
     });
-    promises.push(p1);
+    //promises.push(p1);
     let p2 = dispatch(TaskAction.getTaskList()); // To load task list
-    promises.push(p2);
+    //promises.push(p2);
     return Promise.all(promises); //Wait for each promise to complete
   }
 }])
@@ -45,11 +45,15 @@ export default class HomeContent extends React.Component {
     this.props.history.replace(path);
   }
 
+  componentWillUnmount(){
+    this.props.clearCountryList();
+  }
+
   render() {
     return(
       <div>
         <div style={{float: 'left', width:'50%'}}>
-          <h1 onClick={(e)=>{this.onListClick("/home")}}>Home Content</h1>
+          <h1 onClick={(e)=>{this.onListClick("")}}>Home Content</h1>
           <ul style={{float: 'left', width:'50%'}}>
               {this.props.list &&
                 this.props.list.map((object, index)=>{
@@ -59,7 +63,7 @@ export default class HomeContent extends React.Component {
           </ul>
         </div>
         <div style={{float: 'right', width:'50%'}}>
-          <h1 onClick={(e)=>{this.onListClick("/home/task")}}>Task</h1>
+          <h1 onClick={(e)=>{this.onListClick("/task")}}>Task</h1>
           <ul style={{float: 'right', width:'50%'}}>
               {this.props.taskList &&
                 this.props.taskList.map((object, index)=>{
