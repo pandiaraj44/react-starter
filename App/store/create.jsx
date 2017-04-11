@@ -5,7 +5,6 @@ import thunk from 'redux-thunk';
 import reducers from '../reducers/reducers.jsx';
 
 export default function createStore(history, client, data) {
-
   // Sync dispatched route actions to the history
   const reduxRouterMiddleware = routerMiddleware(history);
 
@@ -14,7 +13,6 @@ export default function createStore(history, client, data) {
 
   //To appy middleware to store
   let finalCreateStore = applyMiddleware(...middleware)(_createStore);
-
 
   //To add reducers to store
   const store = finalCreateStore(reducers, data);

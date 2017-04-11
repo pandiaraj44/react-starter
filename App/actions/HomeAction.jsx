@@ -8,20 +8,20 @@ export const LIST_COUNTRY = 'LIST_COUNTRY';
 export const getCountryList = () => {
   return {
     types: [LOAD_COUNTRY, LOAD_COUNTRY_SUCCESS, LOAD_COUNTRY_FAILURE],
-    promise: (client) => client.get('/country')
-  }
-}
+    promise: client => client.get('/country'),
+  };
+};
 
 export const getCountryList1 = () => {
   return {
     type: LIST_COUNTRY,
-    list: ['India1', 'Australia']
-  }
-}
+    list: ['India1', 'Australia'],
+  };
+};
 
 export const clearCountryList = () => {
   return {
     type: CLEAR_COUNTRY_LIST,
-    list: []
-  }
-}
+    list: [],
+  };
+};

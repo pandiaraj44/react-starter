@@ -1,7 +1,8 @@
 export const LIST_TASK = 'LIST_TASK';
 
 const initialState = {
-  loaded: false
+  loading: true,
+  loaded: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -10,7 +11,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         loading: true,
-        taskList: action.taskList
+        taskList: action.taskList,
       };
     default:
       return state;

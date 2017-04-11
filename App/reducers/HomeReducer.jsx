@@ -5,7 +5,7 @@ export const LIST_COUNTRY = 'LIST_COUNTRY';
 export const CLEAR_COUNTRY_LIST = 'CLEAR_COUNTRY_LIST';
 
 const initialState = {
-  loaded: false
+  loaded: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -20,24 +20,24 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        list: action.result
+        list: action.result,
       };
     case LOAD_COUNTRY_FAILURE:
       return {
         ...state,
         loading: false,
         loaded: false,
-        error: action.error
+        error: action.error,
       };
     case LIST_COUNTRY:
       return {
         ...state,
-        list: action.list
+        list: action.list,
       };
     case CLEAR_COUNTRY_LIST:
       return {
         ...state,
-        list: action.list
+        list: action.list,
       };
     default:
       return state;

@@ -12,29 +12,69 @@ html, body
 {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start; /* align items in Main Axis */
     align-items: stretch; /* align items in Cross Axis */
     align-content: stretch; /* Extra space in Cross Axis */
-
     background: rgba(255, 255, 255, .1);
+}
+
+.fixed-height{
+    min-height: calc(100vh - 145px)
 }
 
 #app > div {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
     justify-content: flex-start; /* align items in Main Axis */
     align-items: stretch; /* align items in Cross Axis */
     align-content: stretch; /* Extra space in Cross Axis */
-
     background: rgba(255, 255, 255, .1);
+}
+
+.loader-center {
+   position: absolute;
+   top :0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto !important;
+}
+
+.loader-height {
+   min-height: calc(100vh - 220px);
+}
+.table-outter-height {
+   min-height: calc(100vh - 220px);
+   height: calc(100vh - 220px);
+   position: relative;
+   padding: 54px 0 48px 0 !important;
+}
+
+.table-inner-height {
+   height: 100%;
+   overflow: auto;
+}
+
+.table-outter-height thead tr{
+   position: absolute;
+   top: 20px;
+   left: 0;
+   width: 100% !important;
+}
+
+.table-outter-height thead tr th{
+   width: 50% !important;
+}
+
+.table-outter-height tfoot td{
+   position: absolute;
+   bottom: -30px;
+   left: -13px;
+   margin-top: 10px
 }
 
 #main {
@@ -330,10 +370,11 @@ h1 span.logo-text {
 }
 header .brand-logo {
     margin: 1px 0;
-    padding: 4px 30px
+    padding: 7px 30px
 }
 header .brand-logo img {
-    width: 172px
+    width: 172px;
+    height: 48px
 }
 @media only screen and (max-width: 992px) {
     nav .nav-wrapper {
@@ -343,7 +384,18 @@ header .brand-logo img {
         font-size: 36px
     }
     ul.side-nav.leftside-navigation {
-        top: 56px !important
+        top: 65px !important
+    }
+}
+@media only screen and (max-width: 600px) {
+    nav .nav-wrapper {
+        text-align: center
+    }
+    nav .nav-wrapper a.page-title {
+        font-size: 36px
+    }
+    ul.side-nav.leftside-navigation {
+        top: 57px !important
     }
 }
 .header-search-wrapper {
@@ -596,7 +648,7 @@ ul.side-nav .collapsible-header {
 .sidebar-collapse {
     position: absolute;
     left: -170px;
-    top: -45px
+    top: -50px
 }
 .user-task,
 .user-time {

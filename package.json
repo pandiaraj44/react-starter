@@ -38,6 +38,7 @@
     "start": "concurrent --kill-others \"npm run start-webpack-build\" \"npm run start-server\"",
     "start-server": "node App/server.js",
     "start-webpack-build": "webpack -d --watch",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "start-jsbeautify": "prettier --single-quote --trailing-comma es5 --write \"{App,__{tests,mocks}__}/**/*.js*\""
   }
 }

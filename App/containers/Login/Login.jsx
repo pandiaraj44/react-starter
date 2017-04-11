@@ -1,10 +1,9 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
 export default class Login extends React.Component {
-
   render() {
-    return(
+    return (
       <div>
         <h1>Login</h1>
       </div>
